@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+  :root,
+  html[data-theme="cinematic-dark"] {
+    --bg-primary: #070707;
+    --bg-secondary: #111111;
+    --bg-card: #171717;
+    --text-primary: #F5F3EF;
+    --text-secondary: #A7A7A7;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-color: #E50914;
+    --ai-accent: #8B5CF6;
+  }
+
+  html[data-theme="warm-ivory"] {
+    --bg-primary: #F4F1EB;
+    --bg-secondary: #EAE5DC;
+    --bg-card: #FBFAF7;
+    --text-primary: #171717;
+    --text-secondary: #68645D;
+    --border-color: #D8D2C8;
+    --accent-color: #A51D2D;
+    --ai-accent: #6B4E8C;
+  }
+
+  html[data-theme="midnight-blue"] {
+    --bg-primary: #06111C;
+    --bg-secondary: #0B1C2B;
+    --bg-card: #102638;
+    --text-primary: #F3F6F8;
+    --text-secondary: #9DAFBD;
+    --border-color: #284052;
+    --accent-color: #2387C9;
+    --ai-accent: #7656A6;
+  }
+
+  html[data-theme="slate-purple"] {
+    --bg-primary: #111018;
+    --bg-secondary: #1A1723;
+    --bg-card: #211D2C;
+    --text-primary: #F5F2F7;
+    --text-secondary: #AAA3B2;
+    --border-color: #393246;
+    --accent-color: #C04B55;
+    --ai-accent: #8B5FBF;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+}
+
+/* Custom Utilities for cinematic experience */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.gradient-atmospheric {
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 35px -5px var(--accent-color);
+}
+
+.glow-violet {
+  box-shadow: 0 0 35px -5px var(--ai-accent);
+}
+
+/* Hero vignette overlay */
+.hero-vignette {
+  background: linear-gradient(
+    90deg,
+    var(--bg-primary) 0%,
+    rgba(7, 7, 7, 0.85) 35%,
+    rgba(7, 7, 7, 0.4) 65%,
+    rgba(7, 7, 7, 0.7) 100%
+  );
+}
+
+.hero-bottom-fade {
+  background: linear-gradient(to top, var(--bg-primary) 0%, rgba(7, 7, 7, 0.6) 40%, rgba(7, 7, 7, 0) 100%);
+}
